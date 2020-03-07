@@ -17,8 +17,8 @@ class PersonService {
 
 //    fun createPerson() = personRepository.save()
 
-    fun updatePerson() {
-
+    fun updatePerson(id: Long, person: Person): Person {
+        return personRepository.save(person)
     }
 
     fun createPerson(person: Person) = personRepository.save(person)
