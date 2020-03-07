@@ -28,9 +28,9 @@ class PersonController {
         return ResponseEntity.ok(personService.createPerson(person))
     }
 
-    @PutMapping
-    private fun updatePerson() {
-
+    @PutMapping("{id}")
+    private fun updatePerson(@PathVariable("id") id: Long, @RequestBody person: Person): ResponseEntity<Person> {
+        return ResponseEntity.ok(personService.updatePerson(id, person))
     }
 
     @DeleteMapping("{id}")
