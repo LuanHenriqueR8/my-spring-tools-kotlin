@@ -13,9 +13,7 @@ class PersonService {
 
     fun findOnePerson(id: Long) = personRepository.findById(id)
 
-    fun findAllPersons() = personRepository.findAll()
-
-//    fun createPerson() = personRepository.save()
+    fun findAllPersons(): MutableList<Person> = personRepository.findAll()
 
     fun updatePerson(id: Long, person: Person): Person {
         return personRepository.save(person)
