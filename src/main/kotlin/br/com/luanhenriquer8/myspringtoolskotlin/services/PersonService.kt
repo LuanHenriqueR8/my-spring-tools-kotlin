@@ -27,6 +27,5 @@ class PersonService {
 
     fun createPerson(person: Person) = personRepository.save(person)
 
-
-//    fun deletePerson() = personRepository.delete()
+    fun deletePerson(id: Long) = personRepository.deleteById(id)
 }
