@@ -14,29 +14,22 @@ class PersonController {
     private lateinit var personService: PersonService
 
     @GetMapping("{id}")
-    private fun findOnePerson(@PathVariable("id") id: Long): ResponseEntity<Person> {
-        return ResponseEntity.ok(personService.findOnePerson(id).get())
-    }
+    private fun findOnePerson(@PathVariable("id") id: Long) = ResponseEntity.ok(personService.findOnePerson(id).get())
 
     @GetMapping
-    private fun findAllPersons(): ResponseEntity<List<Person>> {
-        return ResponseEntity.ok(personService.findAllPersons())
-    }
+    private fun findAllPersons() = ResponseEntity.ok(personService.findAllPersons())
 
     @PostMapping
-    private fun createPerson(@RequestBody person: Person): ResponseEntity<Person> {
-        return ResponseEntity.ok(personService.createPerson(person))
-    }
-
-    @PutMapping("{id}")
-    private fun updatePerson(@PathVariable("id") id: Long, @RequestBody person: Person): ResponseEntity<Person> {
-        return ResponseEntity.ok(personService.updatePerson(id, person))
-    }
+    private fun createPerson(@RequestBody person: Person) = ResponseEntity.ok(personService.createPerson(person))
 
     @DeleteMapping("{id}")
     private fun deletePerson(@PathVariable("id") id: Long) {
-//        ret
+
     }
+
+    @PutMapping("{id}")
+    private fun updatePerson(@PathVariable("id") id: Long, @RequestBody person: Person) =
+            ResponseEntity.ok(personService.updatePerson(id, person))
 }
 
 
