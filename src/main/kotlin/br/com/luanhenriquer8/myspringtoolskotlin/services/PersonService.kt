@@ -16,9 +16,9 @@ class PersonService {
     fun findAllPersons(): MutableList<Person> = personRepository.findAll()
 
     fun updatePerson(id: Long, person: Person): Person {
-        val personFechted = personRepository.findById(id)
+        val personFetched = personRepository.findById(id)
         val personToSave = Person().apply {
-            this.id  = personFechted.get().id
+            this.id = personFetched.get().id
             this.name = person.name
         }
 
