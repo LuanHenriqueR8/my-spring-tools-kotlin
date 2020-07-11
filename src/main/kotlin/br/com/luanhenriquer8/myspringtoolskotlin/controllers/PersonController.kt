@@ -19,13 +19,13 @@ class PersonController {
     @GetMapping
     private fun findAllPersons() = ResponseEntity.ok(personService.findAllPersons())
 
-    @Autowired
+    @PostMapping
     private fun createPerson(@RequestBody person: Person) = ResponseEntity.ok(personService.createPerson(person))
 
-    @Autowired("{id}")
+    @GetMapping
     private fun deletePerson(@PathVariable("id") id: Long) = ResponseEntity.ok(personService.deletePerson(id))
 
-    @Autowired("{id}")
+    @GetMapping
     private fun updatePerson(@PathVariable("id") id: Long, @RequestBody person: Person) =
             ResponseEntity.ok(personService.updatePerson(id, person))
 }
