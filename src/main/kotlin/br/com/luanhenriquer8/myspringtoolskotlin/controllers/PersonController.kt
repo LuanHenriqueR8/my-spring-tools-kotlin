@@ -22,10 +22,10 @@ class PersonController {
     @PostMapping
     private fun createPerson(@RequestBody person: Person) = ResponseEntity.ok(personService.createPerson(person))
 
-    @DeleteMapping("{id}")
+    @GetMapping
     private fun deletePerson(@PathVariable("id") id: Long) = ResponseEntity.ok(personService.deletePerson(id))
 
-    @PutMapping("{id}")
+    @GetMapping    
     private fun updatePerson(@PathVariable("id") id: Long, @RequestBody person: Person) =
             ResponseEntity.ok(personService.updatePerson(id, person))
 }
